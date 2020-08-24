@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{%extends "campus/base.html"%}
+
+{%block body_block%}
+    <div class="container-fluid">
+      
+          <div class="row">
+              <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+               
+                <br>
+                <h2>DASHBOARD</h2>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+          <div class="jumbotron">
+              <form method="get">
+                  {% csrf_token %}
+                  <h1>PROFILE</h1>
+                  <p>reg num:<b>{{ post.username }}</b></p>
+                  <p>name :<b>{{ post.name}}</b></p>
+                  <p>father's name:<b>{{ post.fathers_name}}</b></p>
+                  <p>mother's name:<b>{{ post.mothers_name}}</b></p>
+                  <p>gender:<b>{{ post.gender}}</b></p>
+                  <p>place:<b>{{ post.place}}</b></p>
+                  <p>branch:<b>{{ post.branch}}</b></p>
+                  <p>Btech(cgpa):<b>{{ post.cgpa_Btech}}</b></p>
+                  <p>10 class(cgpa):<b>{{ post.class_10_cgpa}}</b></p>
+                  <p>12 class(cgpa):<b>{{ post.class_12_percentage}}</b></p>
+                  <p>certifications count:<b>{{ post.certifications_count}}</b></p>
+                  <p>internship:<b>{{ post.internship}}</b></p>
+                  <p>languages:<b>{{ post.languages}}</b></p>
+                  <p>sop:<b>{{ post.sop}}</b></p>
+                  <p>dob:<b>{{ post.dob}}</b></p>
+              
+              
+              </form>
+                    
+          </div>
+          
+
+
+      </div>
+      
+
+
+{%endblock%}
+ 

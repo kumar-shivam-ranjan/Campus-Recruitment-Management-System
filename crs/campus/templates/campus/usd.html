@@ -1,0 +1,76 @@
+
+         <!DOCTYPE html>
+         {%extends "campus/base.html"%}
+         
+         {%block body_block%}
+             <div class="container-fluid">
+               
+                   <div class="row">
+                       <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                        
+                         <br>
+                         <h2>Modify Details</h2>
+                       </div>
+                     </div>
+                   </div>
+                   <div class="container">
+                   <div class="jumbotron">
+                      
+
+                      {% if form.errors %}
+                      {% for field in form %}
+                          {% for error in field.errors %}
+                              <div class="alert alert-danger">
+                                  <strong>{{ error|escape }}</strong>
+                              </div>
+                          {% endfor %}
+                      {% endfor %}
+                      {% for error in form.non_field_errors %}
+                          <div class="alert alert-danger">
+                              <strong>{{ error|escape }}</strong>
+                          </div>
+                      {% endfor %}
+                  {% endif %}
+                  
+                  
+                           <form method="post" >
+                              {% csrf_token %}
+                               <table>
+                                    <tr><th><label for="id_phone_number">Phone number:</label></th><td><input type="text" name="phone_number" maxlength="10" minlength="10" required id="id_phone_number"  value="{{ y }}"></td></tr>
+                                    <tr><th><label>DOB</label></th><td><input type="date" maxlength="10" minlength="10" value="{{ db }}"></td></tr>
+                                    <tr><th><label>Father's name</label></th><td><input type="text" maxlength="10" minlength="10" value="{{ fn }}"></td></tr>
+                                    <tr><th><label>Mother's Name</label></th><td><input type="text" maxlength="10" minlength="10" value="{{ mn }}"></td></tr>
+                                    <tr><th><label>Gender</label></th>
+                                        <td>
+                                        <input type="radio" name="gender" value="female" >female
+                                        <input type="radio" name="gender" value="male" >male
+                                        <input type="radio" name="gender" value="others" >others
+                                        </td>
+                                    </tr>
+                                    <tr><th><label>Place</label></th><td><input type="text" maxlength="10" minlength="10" value="{{ p }}"></td></tr>
+                                    <tr><th><label>Class 10 CGPA</label></th><td><input type="number" value="{{ c10 }}"></td></tr>
+                                    <tr><th><label>Class 12 Percentage</label></th><td><input type="number" value="{{ c12 }}" ></td></tr>
+                                    <tr><th><label>Internship</label></th><td><input type="text" value="yes/no" value="{{ i }}"></td></tr>
+                                    <tr><th><label>Certification count</label></th><td><input type="number" maxlength="10" minlength="10" value="{{ cc }}"></td></tr>
+                                    <tr><th><label>languages</label></th><td><input type="text" maxlength="10" minlength="10" value="{{ l }}"></td></tr>
+                                    <tr><th><label>Email</label></th><td><input type="email" value="{{ e }}"></td></tr>
+                                    <tr><th><label for="id_sop" value="{{ y }}">Sop:</label></th><td><textarea rows="10" cols="50" name="sop"  maxlength="500" required id="id_sop" value="{{ x }}"></textarea></td></tr>
+                                    
+                                   <tr>
+                                      <td></td>
+                                       <td><br><button type="submit" name="submit" value="Register" style="font-size: 1.5rem;font-family: Comic Sans MS, cursive, sans-serif" >MODIFY</button></td>
+                                  </tr>
+
+                               </table>
+                           </form>
+                       </div>
+                   </div>
+                   
+         
+         
+               </div>
+               
+         
+         
+         {%endblock%}
+          

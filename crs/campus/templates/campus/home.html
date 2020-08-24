@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>College plcement</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Work+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "campus/fonts/icomoon/style.css" %}">
+    <link rel="stylesheet" href="{% static "campus/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "campus/css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "campus/css/jquery-ui.css" %}">
+    <link rel="stylesheet" href="{% static "campus/css/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "campus/css/owl.theme.default.min.css" %}">
+    <link rel="stylesheet" href="{% static "campus/css/animate.css" %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css" >
+    <link rel="stylesheet" href="{% static "campus/fonts/flaticon/font/flaticon.css" %}" >
+    <link rel="stylesheet" href="{% static "campus/css/aos.css" %}">
+    <link rel="stylesheet" href="{% static "campus/css/style.css" %}">
+
+  </head>
+  <body>
+
+    <div class="site-navbar-wrap js-site-navbar bg-white">
+
+      <div class="container">
+        <div class="site-navbar bg-light">
+          <div class="py-1">
+            <div class="row align-items-center">
+              <div class="col-2">
+                <h2 class="brand"><a href="http://127.0.0.1:8000"><strong>COLLEGE PLACEMENT</strong> </a></h2>
+              </div>
+              <div class="col-10">
+                <nav class="site-navigation text-right" role="navigation">
+                  <div class="container">
+                    <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-blue"><span class="icon-menu h3"></span></a></div>
+                    
+                    <ul class="site-menu js-clone-nav d-none d-lg-block">
+                        {% if user.is_authenticated %}
+                        <li>
+                            <a href=" http://127.0.0.1:8000/company/company_login/">Company</a>
+                          </li>
+                        <li><a href="http://127.0.0.1:8000/student/student_login/">student</a></li>
+                        {% else %}
+                      <li><a href="http://127.0.0.1:8000/student/student_login/">Candidate Login</a></li>
+                      <li>
+                        <a href=" http://127.0.0.1:8000/company/company_login/">Company Login</a>
+                      </li>
+                      <li><a href="http://127.0.0.1:8000/admin">Admin</a></li>
+                      
+                      {% endif %}
+                      <li><a href="#">{% if user.is_authenticated %}
+                        <a href="http://127.0.0.1:8000/logout/"> Hi {{ user.username }}! logout</a>
+                        {% else %}
+                        <p style="color:grey">You are not logged in</p>
+                        {% endif %}</a></li>
+
+                    
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="height: 80px;"></div>
+
+    <div class="site-blocks-cover overlay" style="background-image: url({% static "campus/images/hero_1.jpg"%})"; data-aos="fade" data-stellar-background-ratio="0.5">
+
+    </div>
+
+    <div class="site-section block-15">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+            <h1>WELCOME TO THE PLACEMENT  PORTAL</h1>
+           
+            <br>
+            <h2>VISITING COMPANIES</h2>
+          </div>
+        </div>
+      
+
+
+<div class="nonloop-block-15 owl-carousel">
+  <div class="media-with-text">
+    <div class="img-border-sm mb-4">
+      <a href="https://www.amazon.com/" class="image-play">
+        <img src="{% static "campus/images/amazon.jpg" %}" alt="" class="img-fluid" style="height: 100%;">
+      </a>
+    </div>
+    <h2 class="heading mb-0 h5"><a href="https://www.amazon.com/">Amazon</a></h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
+  </div>
+
+  <div class="media-with-text">
+    <div class="img-border-sm mb-4">
+      <a href="https://www.google.com/" class="image-play">
+
+        <img src="{% static "campus/images/google.jpg" %}" alt="" class="img-fluid">
+      </a>
+    </div>
+
+      <br>
+    <h2 class="heading mb-0 h5"><a href="https://www.google.com/">Google</a></h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
+  </div>
+
+  <div class="media-with-text">
+    <div class="img-border-sm mb-4">
+      <a href="https://www.flipkart.com/" class="image-play">
+        <img src="{% static "campus/images/flipkart.jpg" %}" alt="" class="img-fluid" style="height: 190px;">
+      </a>
+    </div>
+      <br>
+        <br>
+    <h2 class="heading mb-0 h5"><a href="https://www.flipkart.com/">Flipkart</a></h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
+  </div>
+
+  <div class="media-with-text">
+    <div class="img-border-sm mb-4">
+      <a href="https://www.samsung.com/" class="image-play">
+        <img src="{% static "campus/images/samsung.jpg" %}" alt="" class="img-fluid" style="height: 250px;">
+      </a>
+    </div>
+    <h2 class="heading mb-0 h5"><a href="https://www.samsung.com/">samsung</a></h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
+  </div>
+
+  <div class="media-with-text">
+    <div class="img-border-sm mb-4">
+      <a href="https://www.microsoft.com/" class="image-play">
+        <img src="{% static "campus/images/Microsoft.jpg" %}" alt="" class="img-fluid" style="height: 250px;">
+      </a>
+    </div>
+    <h2 class="heading mb-0 h5"><a href="https://www.microsoft.com/">Microsoft</a></h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
+  </div>
+
+  <div class="media-with-text">
+    <div class="img-border-sm mb-4">
+      <a href="https://www.nutanix.com/" class="image-play">
+        <img src="{% static "campus/images/nutanix.jpeg" %}" alt="" class="img-fluid" style="height:250px;">
+      </a>
+    </div>
+    <h2 class="heading mb-0 h5"><a href="https://www.nutanix.com/">Nutanix</a></h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
+  </div>
+
+  <div class="media-with-text">
+    <div class="img-border-sm mb-4">
+      <a href="https://www.nvidia.com/" class="image-play">
+        <img src="{% static "campus/images/nvidia.jpg" %}"  alt="" class="img-fluid" style="height: 100%;">
+      </a>
+    </div>
+    <h2 class="heading mb-0 h5"><a href="https://www.nvidia.com/">Nvidia</a></h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
+  </div>
+  
+</div>
+
+</div>
+</div>
+
+  
+    <footer class="site-footer">
+      <div class="container">
+
+
+        <div class="row">
+          <div class="col-md-4">
+            <h3 class="footer-heading mb-4 text-white">About</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
+            <p><a href="#" class="btn btn-primary pill text-white px-4">Read More</a></p>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="#">About</a></li>
+                    <li><a href="http://127.0.0.1:8000/">Homepage</a></li>
+                    <li><a href="#">Companies</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="https://www.iitbhu.ac.in">IIT-BHU</a></li>
+                    <li><a href="#">Contact us</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-6">
+                <h3 class="footer-heading mb-4 text-white">Categories</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Full Time</a></li>
+                    <li><a href="#">Freelance</a></li>
+                    <li><a href="#">Temporary</a></li>
+                    <li><a href="#">Internship</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
+              <div class="col-md-12">
+                <p>
+                  <a href="https://www.facebook.com/tpc.iitbhu/" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
+                  <a href="https://twitter.com/iitbhu_varanasi?lang=en" class="p-2"><span class="icon-twitter"></span></a>
+                  <a href="https://www.instagram.com/technexiitbhu/?hl=en" class="p-2"><span class="icon-instagram"></span></a>
+                  <a href="https://www.youtube.com/channel/UClQf58OQvm6OkGbQARqqhMg" class="p-2"><span class="icon-youtube"></span></a>
+
+
+                </p>
+              </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All Rights Reserved | placement cell IIT-BHU
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+    
+
+    
+  <script src="{% static "campus/js/jquery-3.3.1.min.js" %}"></script>
+  <script src="{% static "campus/js/jquery-migrate-3.0.1.min.js" %}"></script>
+  <script src="{% static "campus/js/jquery-ui.js" %}"></script>
+  <script src="{% static "campus/js/popper.min.js" %}"></script>
+  <script src="{% static "campus/js/bootstrap.min.js" %}"></script>
+  <script src="{% static "campus/js/owl.carousel.min.js" %}"></script>
+  <script src="{% static "campus/js/jquery.stellar.min.js" %}"></script>
+  <script src="{% static "campus/js/jquery.countdown.min.js" %}"></script>
+  <script src="{% static "campus/js/jquery.magnific-popup.min.js" %}"></script>
+  <script src="{% static "campus/js/bootstrap-datepicker.min.js" %}"></script>
+  <script src="{% static "campus/js/aos.js" %}"></script>
+  <script src="{% static "campus/js/mediaelement-and-player.min.js" %}"></script>
+
+  <script src="{% static "campus/js/main.js" %}"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+         {%extends "campus/base.html"%}
+         
+         {%block body_block%}
+             <div class="container">
+               <div class="row">
+                 <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                  
+                   <br>
+                   <h2>Modify details</h2>
+                 </div>
+               </div>
+             </div>
+             <div class="container">
+               <div class="container">
+                 <div class="jumbotron">
+                    {% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+         <form method="post" >
+            {% csrf_token %}
+             <table>
+                 <tr><td><label for="id_hr_name">HR Name:</label><input type="text" name="hr_name" value={{ x }} maxlength="10"  ></td></tr>
+
+<tr><td><label for="id_phone_number">HR Phone number:</label><input type="text" name="hr_phn" value={{ y }} maxlength="10" minlength="10" ></td></tr>
+                 <tr><th><label for="id_about">About:</label><textarea rows="10" cols="50" name="about"  maxlength="500" >{{ z}}</textarea></th></tr>
+
+                 <tr>
+                     <td><br><button type="submit" name="submit" class="btn btn-primary" value="Register" style="font-size: 1.5rem;" >MODIFY</button></td>
+                </tr>
+             </table>
+         </form>
+                 </div>
+                   
+               </div>
+             </div>
+             
+             
+         {%endblock%}

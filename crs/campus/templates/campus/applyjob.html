@@ -1,0 +1,52 @@
+{% extends "campus/base.html" %}
+
+{% block body_block %}
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+          
+            <br>
+            <h2> APPLY FOR JOB!</h2>
+          </div>
+        </div>
+      </div>
+</div>
+<div class="container">
+
+  <div class="jumbotron">
+      <h1>{{ s }}</h1>
+      <form method="post">
+           {% csrf_token %}
+       
+            MINIMUM SALARY:<input type="number" size="10" name="salary"  style="font-size: 1rem;font-family: Comic Sans MS, cursive, sans-serif">
+            MAXIMUM BOND YEARS:<input type="number" size="10" name="years"  style="font-size: 1rem;font-family: Comic Sans MS, cursive, sans-serif">
+            <input type="submit" class="btn btn-primary" value="SEARCH">
+        </form>
+        <br>
+      <table border="1px" style="text-align: center;border-collapse: collapse;background-color:rgb(96, 224, 214);"width=100%">
+          <tr >
+              <th style="font-size:1.5rem;color: #123027cc">Company </th>
+              <th style="font-size:1.5rem;color: #123027cc">Designation</th>
+                   <th style="font-size:1.5rem;color: #123027cc">Salary</th>
+              <th style="font-size:1.5rem;color: #123027cc">Bond years</th>
+              <th style="font-size:1.5rem;color:rgb(44, 143, 5)">Apply</th>
+    
+          </tr>
+          {%  for i in y %}
+          <tr>
+              <td>{{ i.company_name }}</td>
+          <td>{{ i.designation }}</td>
+          <td>{{ i.salary }}</td>
+          <td>{{ i.bond_years }}</td>
+              <td><a href="http://127.0.0.1:8000/student/student_login/applyjob/{{ i.job_id }}/" target="popup" onclick="window.open('http://127.0.0.1:8000/student/student_login/applyjob/{{ i.job_id }}/','popup','width=600,height=600'); return false;" >APPLY</a></td>
+          </tr>
+          {% endfor %}
+      </table> 
+
+
+  </div>
+  
+</div>
+
+{% endblock %}

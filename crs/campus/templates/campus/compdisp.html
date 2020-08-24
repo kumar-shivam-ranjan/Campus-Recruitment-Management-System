@@ -1,0 +1,26 @@
+{% extends "campus/base.html" %}
+
+{% block body_block %}
+<div class="container">
+    <div class="jumbotron">
+            <form method="post">
+            {% csrf_token %}
+            <h1 style="font-size: 4rem;color: #bd2130;font-family: Comic Sans MS, cursive, sans-serif">ABOUT COMPANY</h1>
+            <p>company name:<b>{{ post.company_name }}</b></p>
+            <p>established year:<b>{{ post.est_year}}</b></p>
+            <p>headquaters:<b>{{ post.headquaters}}</b></p>
+            <p>about:<b>{{ post.about}}</b></p>
+            <p>type:<b>{{ post.type}}</b></p>
+            <p>email:<b>{{ post.email}}</b></p>
+            <input type="submit" value="apply"  style="font-family: Comic Sans MS, cursive, sans-serif;font-size: 1.5rem">
+        
+    </form>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+
+
