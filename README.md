@@ -9,7 +9,6 @@ This Project is about Campus recruitment System where both IT companies as well 
  > This is how the home page looks
  ![Screenshot from 2019-12-06 14-22-15](https://user-images.githubusercontent.com/42781233/70318900-1d355300-1847-11ea-9594-023c571992e2.png)
  
- ![Screenshot from 2020-11-26 11-09-59](https://user-images.githubusercontent.com/42781233/100312354-23808a00-2fd8-11eb-8c43-f1d524196521.png)
 
  ![Screenshot (61)](https://user-images.githubusercontent.com/42781233/91100568-12e01100-e683-11ea-91a8-6c2728e1b915.png)
 
